@@ -16,5 +16,4 @@ export class MainComponent implements OnInit {
     this.taskService.firstTask() //just for dev
     this.tasks = this.taskService.sendTasks()
   }
-
 }
