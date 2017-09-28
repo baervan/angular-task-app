@@ -1,0 +1,26 @@
+<ul>
+    <li>
+        <div class="side-link" [class.side-link-long]="!toggleMenu">
+            <i class="fa fa-home" aria-hidden="true" [class.fa-2x]="toggleMenu"></i>
+            <label *ngIf="!toggleMenu">&nbsp;Home</label>
+        </div>
+    </li>
+    <li>
+        <div class="side-link" [class.side-link-long]="!toggleMenu">
+            <i class="fa fa-check-square-o" aria-hidden="true" [class.fa-2x]="toggleMenu"></i>
+            <label *ngIf="!toggleMenu">&nbsp;Tasks</label>
+        </div>
+    </li>
+    <li>
+        <div class="side-link" [class.side-link-long]="!toggleMenu">
+            <i class="fa fa-area-chart" aria-hidden="true" [class.fa-2x]="toggleMenu"></i>
+            <label *ngIf="!toggleMenu">&nbsp;Overview</label>
+        </div>
+    </li>
+    <li>
+        <div class="side-link" [class.side-link-long]="!toggleMenu">
+            <i class="fa fa-user-circle-o" aria-hidden="true" [class.fa-2x]="toggleMenu"></i>
+            <label *ngIf="!toggleMenu">&nbsp;Overview</label>
+        </div>
+    </li>
+</ul>
