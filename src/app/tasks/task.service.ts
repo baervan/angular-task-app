@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core'
 import { Task } from './task.interface'
+import { TimeService } from '../time/time.service'
 
 @Injectable()
 export class TaskService {
-  
+
   private tasks: Task[] = []
+
+  constructor(private timeService: TimeService) {}
 
   sendTasks() {
     return this.tasks
@@ -29,12 +32,16 @@ export class TaskService {
 
   createNewTask(params: any) {
     let newTask = new Task
-    
+
     newTask = {
       name: params.name,
+      timestamp: this.timeService.getTimestamp(),
+      urgent: params.urgent,
       completed: false
     }
 
     this.tasks.push(newTask)
+
+    console.log(this.tasks)
   }
 }

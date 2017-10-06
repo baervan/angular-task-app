@@ -4,7 +4,7 @@ import { Task } from './task.interface'
 @Component({
   selector: 'task',
   templateUrl: 'app/tasks/task.component.html',
-  styleUrls: []
+  styleUrls: ['app/tasks/task.component.css']
 })
 export class TaskComponent {
   @Input() task: Task

@@ -1,24 +1,30 @@
 import { Component } from '@angular/core'
 import { TaskService } from './task.service'
+import { InputStringService } from './input-string.service'
 
 @Component({
   selector: 'create-task',
   templateUrl: 'app/tasks/create-task.component.html'
 })
 export class CreateTaskComponent {
-  private taskName: string = null
+  private inputString: string = null
 
-  constructor(private taskService: TaskService ) {}
+  constructor(private taskService: TaskService, private inputStringService: InputStringService ) {}
 
   createTask() {
-    let params = { 
-      name: this.taskName
-    }
+    this.taskService.createNewTask( this.inputStringService.parse(this.inputString) )
+  }
 
-    this.taskService.createNewTask(params)
+  onKeypress(e: any) {
+    if (e.charCode === 13) {
+      this.inputValue(e)
+      this.createTask()
+    }
   }
 
   inputValue({srcElement}: any) {
-    this.taskName = srcElement.value
+    this.inputString = srcElement.value
+    srcElement.value = ""
   }
+
 }

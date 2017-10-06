@@ -24,17 +24,18 @@ sidebar {
     float: left;
     transition: all 300ms ease-in-out;
     -webkit-transition: all 200ms ease-out;
-    width: 4em;
+    /*width: 4em;*/
     height: 100%;
 }
 
 sidebar.sidebar-extend {
-    width: 12em;
+    /*width: 12em;*/
 }
 
 main {
     float: left;
     padding: 1em 1em 0 1em;
+    box-sizing: border-box;
 }
 
 footer {
@@ -43,3 +44,32 @@ footer {
     background: #4D4D4D;
     padding: 4em 0;
 }
+
+/* GRID experiment */
+#wrapper {
+  display: grid;
+  grid-template-columns: 4em auto;
+  transition: all 300ms ease-in-out;
+}
+
+#wrapper.sidebar-extend {
+  grid-template-columns: 12em auto;
+  grid-template-rows: auto;
+}
+
+header {
+  grid-column: 1/3;
+}
+
+sidebar {
+  grid-column: 1/2;
+}
+
+main {
+  grid-column: 2/3;
+}
+
+footer {
+  grid-column: 1/3;
+}
+

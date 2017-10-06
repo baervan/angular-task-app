@@ -1,0 +1,21 @@
+div {
+  padding: 1em;
+  background: #C5E1FC;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 0 1em 0;
+}
+
+div.task-urgent {
+  background: #FF8F8F;
+}
+
+div:hover {
+  outline: 2px dashed #AFAFAF;
+}
+
+h3 {
+  margin: 0.5em 0;
+  display: inline-block;
+}

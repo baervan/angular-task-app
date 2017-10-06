@@ -1,5 +1,5 @@
 <div>
     <h2>Create Task</h2>
-    <input type="text" [value]="taskName" (change)="inputValue($event)" />
+    <input type="text" (change)="inputValue($event)" (keypress)="onKeypress($event)" />
     <button (click)="createTask($event)">Create</button>
 </div>

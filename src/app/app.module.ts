@@ -3,19 +3,23 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent }  from './app.component';
 import { Sidebar } from './sidebar/sidebar.component'
-import { 
+import {
   MainComponent,
   TaskComponent,
   CreateTaskComponent,
-  TaskService
+  TaskService,
+  InputStringService
 } from './tasks/index'
+import { TimeService } from './time/time.service'
 
 @NgModule({
   imports:      [ BrowserModule ],
   providers: [
-    TaskService
+    TaskService,
+    TimeService,
+    InputStringService
   ],
-  declarations: [ 
+  declarations: [
     AppComponent,
     Sidebar,
     MainComponent,

@@ -1,4 +1,5 @@
-<div>
+<div [class.task-urgent]="task.urgent">
     <h3>{{task.name}}</h3>
-    <h6>{{task.project}}</h6>
+    <h3>{{task.project || ""}}</h3>
+    <p>Infos</p>
 </div>
