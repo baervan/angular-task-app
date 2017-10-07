@@ -37,9 +37,10 @@ export class InputStringService {
       deadline = deadline[1]
     } else deadline = "-- --"
 
+    /*For NG
     if(duration !== null) {
       duration = 1 * duration[1]
-    } else duration = 0
+    } else duration = 0*/
 
     if(urgent !== null) {
       urgent = true;

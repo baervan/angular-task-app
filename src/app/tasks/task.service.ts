@@ -37,6 +37,9 @@ export class TaskService {
       name: params.name,
       timestamp: this.timeService.getTimestamp(),
       urgent: params.urgent,
+      times: {
+        start: this.timeService.getTimestamp().dateDisplay;
+      },
       completed: false
     }
 

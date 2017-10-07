@@ -1,5 +1,23 @@
-<div [class.task-urgent]="task.urgent">
-    <h3>{{task.name}}</h3>
-    <h3>{{task.project || ""}}</h3>
-    <p>Infos</p>
+<div [class.task-urgent]="task.urgent" class="task">
+    <div class="task-main">
+      <h3>{{task.name}}</h3>
+      <h3>{{task.project || ""}}</h3>
+      <p><i>Infos</i></p>
+      <p>Created: {{task.times.start}}</p>
+    </div>
+    <div class="task-urgent-btn">
+      <button>
+        <i class="fa fa-exclamation-triangle fa-2x" aria-hidden="true"></i>
+      </button>
+    </div>
+    <div class="task-completed-btn">
+      <button>
+        <i class="fa fa-check-square-o fa-2x" aria-hidden="true"></i>
+      </button>
+    </div>
+    <div class="task-deleted-btn">
+      <button>
+        <i class="fa fa-times fa-2x" aria-hidden="true"></i>
+      </button>
+    </div>
 </div>

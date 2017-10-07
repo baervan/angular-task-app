@@ -1,21 +1,60 @@
-div {
+div.task {
   padding: 1em;
   background: #C5E1FC;
   overflow: hidden;
   width: 100%;
   box-sizing: border-box;
   margin: 0 0 1em 0;
+  display: grid;
+  grid-template-columns: auto 6em 6em 6em;
 }
 
 div.task-urgent {
   background: #FF8F8F;
 }
 
-div:hover {
+div.task:hover {
   outline: 2px dashed #AFAFAF;
 }
 
 h3 {
   margin: 0.5em 0;
   display: inline-block;
+}
+
+p {
+  margin: 0 0 0.5em 0
+}
+
+div:not(:first-child) {
+  /*float: left;*/
+  text-align: center;
+  line-height: 8em;
+}
+
+div.task-main {
+  grid-column: 1/2;
+}
+
+div.task-urgent-btn {
+  grid-column: 2/3;
+}
+
+div.task-completed-btn {
+  grid-column: 3/4;
+}
+
+div.task-deleted-btn {
+  grid-column: 4/5;
+}
+
+div button {
+  border: none;
+  background: #5585B3;
+  color: #FFF;
+  padding: 1em;
+}
+
+div.task-deleted-btn button {
+  width: 4em;
 }
