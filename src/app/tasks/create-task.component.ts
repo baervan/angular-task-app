@@ -4,7 +4,8 @@ import { InputStringService } from './input-string.service'
 
 @Component({
   selector: 'create-task',
-  templateUrl: 'app/tasks/create-task.component.html'
+  templateUrl: 'app/tasks/create-task.component.html',
+  styleUrls: ['app/tasks/create-task.component.css']
 })
 export class CreateTaskComponent {
   private inputString: string = null

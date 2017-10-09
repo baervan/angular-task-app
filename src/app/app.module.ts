@@ -1,7 +1,8 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { RouterModule } from '@angular/router'
 import { AppComponent }  from './app.component';
+import { appRoutes } from './routes'
 import { Sidebar } from './sidebar/sidebar.component'
 import {
   MainComponent,
@@ -11,21 +12,27 @@ import {
   InputStringService
 } from './tasks/index'
 import { TimeService } from './time/time.service'
+import { ModalService, ModalComponent } from './shared/index'
 
 @NgModule({
-  imports:      [ BrowserModule ],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(appRoutes)
+  ],
   providers: [
     TaskService,
     TimeService,
-    InputStringService
+    InputStringService,
+    ModalService
   ],
   declarations: [
     AppComponent,
     Sidebar,
     MainComponent,
     TaskComponent,
-    CreateTaskComponent
+    CreateTaskComponent,
+    ModalComponent
   ],
-  bootstrap:    [ AppComponent ]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

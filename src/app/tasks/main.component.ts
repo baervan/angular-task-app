@@ -14,9 +14,9 @@ export class MainComponent implements OnInit {
   constructor(private taskService: TaskService, private timeService: TimeService) {}
 
   ngOnInit() {
-    //console.log(this.timeService.getElapsedTime()
+    //console.log(this.timeService.getElapsedTime())
 
-    this.taskService.firstTask() //just for dev
-    this.tasks = this.taskService.sendTasks()
+    //initialize saved tasks
+    this.tasks = this.taskService.loadTasks()
   }
 }

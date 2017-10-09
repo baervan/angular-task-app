@@ -1,4 +1,5 @@
 export class Task {
+  id: number
   project?: string
   name: string
   timestamp?: {}
@@ -9,5 +10,5 @@ export class Task {
     end: string
   }
   completed: boolean
-  visible?: boolean
+  active?: boolean
 }

@@ -7,10 +7,19 @@ div.task {
   margin: 0 0 1em 0;
   display: grid;
   grid-template-columns: auto 6em 6em 6em;
+
+  user-select: none;
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
 }
 
 div.task-urgent {
   background: #FF8F8F;
+}
+
+div.task-completed {
+  background: #5BB171;
 }
 
 div.task:hover {
@@ -27,7 +36,6 @@ p {
 }
 
 div:not(:first-child) {
-  /*float: left;*/
   text-align: center;
   line-height: 8em;
 }
@@ -57,4 +65,12 @@ div button {
 
 div.task-deleted-btn button {
   width: 4em;
+}
+
+div button.urgent-btn-clicked {
+  background: #e06a6a;
+}
+
+div button.completed-btn-clicked {
+  background: #539865;
 }

@@ -1,0 +1,17 @@
+input {
+  height: 3em;
+  width: 40%;
+  border: 1px solid #CCC;
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0 0 0 1em;
+}
+
+button {
+  height: 3em;
+  width: 6em;
+  color: #FFF;
+  background: #3268C0;
+  border: none;
+  font-weight: bold;
+}

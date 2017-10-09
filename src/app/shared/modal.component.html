@@ -1,0 +1,16 @@
+<div *ngIf="modal.on" class="modal-darkener">
+  &nbsp;
+</div>
+
+<div *ngIf="modal.on" class="modal">
+  <div class="modal-content">
+      {{modal.data?.content}}
+  </div>
+  <div class="modal-input modal-yesno" *ngIf="modal.data?.type === 'yes-no'">
+    <button (click)="handleClickYesNo(true)">Yes</button>
+    <button (click)="handleClickYesNo(false)">No</button>
+  </div>
+  <div class="modal-input modal-confirm" *ngIf="modal.data?.type === 'confirm'">
+    <button>Ok</button>
+  </div>
+</div>

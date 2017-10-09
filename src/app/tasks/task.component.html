@@ -1,22 +1,22 @@
-<div [class.task-urgent]="task.urgent" class="task">
+<div [class.task-urgent]="task.urgent" [class.task-completed]="task.completed" class="task" draggable="true">
     <div class="task-main">
       <h3>{{task.name}}</h3>
-      <h3>{{task.project || ""}}</h3>
+      <h3 *ngIf="task.project">-&nbsp;{{task.project}}</h3>
       <p><i>Infos</i></p>
-      <p>Created: {{task.times.start}}</p>
+      <p>Created: {{task.timestamp.dateDisplay}} {{task.timestamp.timeDisplay}}</p>
     </div>
     <div class="task-urgent-btn">
-      <button>
+      <button (click)="urgentButtonClick()" [class.urgent-btn-clicked]="task.urgent && !task.completed">
         <i class="fa fa-exclamation-triangle fa-2x" aria-hidden="true"></i>
       </button>
     </div>
     <div class="task-completed-btn">
-      <button>
+      <button (click)="completedButtonClick()" [class.completed-btn-clicked]="task.completed">
         <i class="fa fa-check-square-o fa-2x" aria-hidden="true"></i>
       </button>
     </div>
     <div class="task-deleted-btn">
-      <button>
+      <button (click)="deleteButtonClick()">
         <i class="fa fa-times fa-2x" aria-hidden="true"></i>
       </button>
     </div>
