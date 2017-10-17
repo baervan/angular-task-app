@@ -8,6 +8,7 @@ export class TaskService {
   private tasks: Task[] = []
   private id: number = 0
 
+  //example starting tasks
   private exampleTask1: Task = {
     id: 1,
     project: "Gado",

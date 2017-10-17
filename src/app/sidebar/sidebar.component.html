@@ -1,26 +1,41 @@
 <ul>
     <li>
         <div class="side-link" [class.side-link-long]="!toggleMenu">
-            <i class="fa fa-home" aria-hidden="true" [class.fa-2x]="toggleMenu"></i>
-            <label *ngIf="!toggleMenu">&nbsp;Home</label>
+          <a>
+              <i class="fa fa-bars" aria-hidden="true" [class.fa-2x]="toggleMenu" [class.rotated]="!toggleMenu"></i>
+          </a>
         </div>
     </li>
     <li>
+      <a [routerLink]="['/tasks']">
         <div class="side-link" [class.side-link-long]="!toggleMenu">
             <i class="fa fa-check-square-o" aria-hidden="true" [class.fa-2x]="toggleMenu"></i>
             <label *ngIf="!toggleMenu">&nbsp;Tasks</label>
         </div>
+      </a>
     </li>
     <li>
+      <a [routerLink]="['/overview']">
         <div class="side-link" [class.side-link-long]="!toggleMenu">
             <i class="fa fa-area-chart" aria-hidden="true" [class.fa-2x]="toggleMenu"></i>
             <label *ngIf="!toggleMenu">&nbsp;Overview</label>
         </div>
+      </a>
     </li>
     <li>
+      <a [routerLink]="['/user']">
         <div class="side-link" [class.side-link-long]="!toggleMenu">
             <i class="fa fa-user-circle-o" aria-hidden="true" [class.fa-2x]="toggleMenu"></i>
-            <label *ngIf="!toggleMenu">&nbsp;Overview</label>
+            <label *ngIf="!toggleMenu">&nbsp;User</label>
         </div>
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['/settings']">
+        <div class="side-link" [class.side-link-long]="!toggleMenu">
+            <i class="fa fa-cog" aria-hidden="true" [class.fa-2x]="toggleMenu"></i>
+            <label *ngIf="!toggleMenu">&nbsp;Settings</label>
+        </div>
+      </a>
     </li>
 </ul>

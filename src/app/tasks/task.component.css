@@ -1,12 +1,12 @@
 div.task {
   padding: 1em;
-  background: #C5E1FC;
+  background: #f5f5f5;
   overflow: hidden;
   width: 100%;
   box-sizing: border-box;
   margin: 0 0 1em 0;
   display: grid;
-  grid-template-columns: auto 6em 6em 6em;
+  grid-template-columns: 20em 12em 12em auto 6em 6em 6em;
 
   user-select: none;
   -webkit-user-select: none;  /* Chrome all / Safari all */
@@ -15,11 +15,11 @@ div.task {
 }
 
 div.task-urgent {
-  background: #FF8F8F;
+  background: #fff1f1;
 }
 
 div.task-completed {
-  background: #5BB171;
+  background: #FFF;
 }
 
 div.task:hover {
@@ -32,33 +32,22 @@ h3 {
 }
 
 p {
-  margin: 0 0 0.5em 0
+  margin: 0 0 0.5em 0;
 }
 
-div:not(:first-child) {
+div.task-section:first-child {
+  grid-column: 1/2;
+}
+
+div.task-btn {
   text-align: center;
   line-height: 8em;
 }
 
-div.task-main {
-  grid-column: 1/2;
-}
-
-div.task-urgent-btn {
-  grid-column: 2/3;
-}
-
-div.task-completed-btn {
-  grid-column: 3/4;
-}
-
-div.task-deleted-btn {
-  grid-column: 4/5;
-}
-
 div button {
   border: none;
-  background: #5585B3;
+  border-radius: 3px;
+  background: #43a8e2;
   color: #FFF;
   padding: 1em;
 }
@@ -73,4 +62,8 @@ div button.urgent-btn-clicked {
 
 div button.completed-btn-clicked {
   background: #539865;
+}
+
+div input.task-in {
+  border: none;
 }

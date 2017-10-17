@@ -1,13 +1,13 @@
 <div id="wrapper" [class.sidebar-extend]="!toggleMenu">
   <header>
-    <div>
+    <div class="header-logo">
         <i class="fa fa-cubes fa-3x" aria-hidden="true"></i>
         <h2>Taskr</h2>
     </div>
   </header>
   <sidebar (click)="sidebarOnClick()" [toggleMenu]="toggleMenu" [class.sidebar-extend]="!toggleMenu"></sidebar>
   <main>Main</main>
-  <footer>Footer</footer>
+  <!--<footer>Footer</footer>-->
 </div>
 <modal>
 </modal>

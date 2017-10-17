@@ -1,5 +1,5 @@
 header {
-    background: #DCDCDC;
+    background: #43a8e2;
     clear: both;
     width: 100%;
     text-align: right;
@@ -19,8 +19,12 @@ header div i {
     margin: 0;
 }
 
+header div.header-logo {
+  color: #FFF;
+}
+
 sidebar {
-    background: #8E96B8;
+    background: #91c5e2;
     float: left;
     transition: all 300ms ease-in-out;
     -webkit-transition: all 200ms ease-out;

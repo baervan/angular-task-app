@@ -7,4 +7,8 @@ import { Component, Input } from '@angular/core'
 })
 export class Sidebar {
   @Input() toggleMenu: boolean
+
+  menuClick() {
+    this.toggleMenu = !this.toggleMenu
+  }
 }

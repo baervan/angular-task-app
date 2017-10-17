@@ -1,21 +1,34 @@
 <div [class.task-urgent]="task.urgent" [class.task-completed]="task.completed" class="task" draggable="true">
-    <div class="task-main">
+    <div class="task-section task-main">
       <h3>{{task.name}}</h3>
       <h3 *ngIf="task.project">-&nbsp;{{task.project}}</h3>
       <p><i>Infos</i></p>
       <p>Created: {{task.timestamp.dateDisplay}} {{task.timestamp.timeDisplay}}</p>
     </div>
-    <div class="task-urgent-btn">
-      <button (click)="urgentButtonClick()" [class.urgent-btn-clicked]="task.urgent && !task.completed">
+    <div class="task-section task-deadline">
+      <label for="">Deadline</label>
+      <input type="text" class="task-in task-deadline-in">
+    </div>
+    <div class="task-section task-duration">
+      <label for="">Duration</label>
+      <input type="text" class="task-in task-duration-in">
+      <button>
+        <i class="fa fa-play" aria-hidden="true"></i>
+      </button>
+    </div>
+    <div class="task-section">
+    </div>
+    <div class="task-section task-btn task-urgent-btn">
+      <button (click)="urgentButtonClick()" [class.urgent-btn-clicked]="task.urgent" [disabled]="task.completed">
         <i class="fa fa-exclamation-triangle fa-2x" aria-hidden="true"></i>
       </button>
     </div>
-    <div class="task-completed-btn">
+    <div class="task-section task-btn task-completed-btn">
       <button (click)="completedButtonClick()" [class.completed-btn-clicked]="task.completed">
         <i class="fa fa-check-square-o fa-2x" aria-hidden="true"></i>
       </button>
     </div>
-    <div class="task-deleted-btn">
+    <div class="task-section task-btn task-deleted-btn">
       <button (click)="deleteButtonClick()">
         <i class="fa fa-times fa-2x" aria-hidden="true"></i>
       </button>

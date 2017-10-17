@@ -4,18 +4,15 @@ import { TaskService } from './task.service'
 import { TimeService } from '../time/time.service'
 
 @Component({
-  selector: 'main',
-  templateUrl: 'app/tasks/main.component.html',
+  templateUrl: 'app/tasks/tasks-page.component.html',
   styleUrls: []
 })
-export class MainComponent implements OnInit {
+export class TaskPageComponent implements OnInit {
   private tasks: Task[] = []
 
   constructor(private taskService: TaskService, private timeService: TimeService) {}
 
   ngOnInit() {
-    //console.log(this.timeService.getElapsedTime())
-
     //initialize saved tasks
     this.tasks = this.taskService.loadTasks()
   }

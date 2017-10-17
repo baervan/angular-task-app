@@ -1,5 +1,5 @@
 export * from './create-task.component'
-export * from './main.component'
+export * from './tasks-page.component'
 export * from './task.component'
 export * from './task.interface'
 export * from './task.service'
