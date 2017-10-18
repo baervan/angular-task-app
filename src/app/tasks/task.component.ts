@@ -10,6 +10,8 @@ import { Observable } from 'rxjs/Observable'
 })
 export class TaskComponent {
   @Input() task: Task
+  private deadlineInput: string = ""
+  private durationInput: string = "00:00:00"
 
   constructor(private modal: ModalService) {}
 
@@ -22,6 +24,7 @@ export class TaskComponent {
   }
 
   deleteButtonClick() {
+    //modal call
     this.modal.render({
       type: 'yes-no',
       content: `

@@ -7,11 +7,11 @@
     </div>
     <div class="task-section task-deadline">
       <label for="">Deadline</label>
-      <input type="text" class="task-in task-deadline-in">
+      <input type="text" class="task-in task-deadline-in" [value]="durationInput">
     </div>
     <div class="task-section task-duration">
       <label for="">Duration</label>
-      <input type="text" class="task-in task-duration-in">
+      <input type="text" class="task-in task-duration-in" [(ngModel)]="durationInput">
       <button>
         <i class="fa fa-play" aria-hidden="true"></i>
       </button>

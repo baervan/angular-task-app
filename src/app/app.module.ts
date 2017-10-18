@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 import { RouterModule } from '@angular/router'
+import { FormsModule } from '@angular/forms'
 import { AppComponent }  from './app.component'
 import { MainComponent } from './main.component'
 import { appRoutes } from './routes'
@@ -20,7 +21,8 @@ import { ModalService, ModalComponent } from './shared/index'
 @NgModule({
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    FormsModule
   ],
   providers: [
     TaskService,
