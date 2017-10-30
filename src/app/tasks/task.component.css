@@ -44,6 +44,11 @@ div.task-btn {
   line-height: 8em;
 }
 
+div.task-infos-in {
+  clear: both;
+  display: block;
+}
+
 div button {
   border: none;
   border-radius: 3px;

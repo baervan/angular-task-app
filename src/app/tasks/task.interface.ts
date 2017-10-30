@@ -2,6 +2,7 @@ export class Task {
   id: number
   project?: string
   name: string
+  infos?: string
   timestamp?: {}
   priority?: number
   urgent?: boolean

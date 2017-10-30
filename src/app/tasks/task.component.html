@@ -1,13 +1,15 @@
 <div [class.task-urgent]="task.urgent" [class.task-completed]="task.completed" class="task" draggable="true">
     <div class="task-section task-main">
-      <h3>{{task.name}}</h3>
-      <h3 *ngIf="task.project">-&nbsp;{{task.project}}</h3>
-      <p><i>Infos</i></p>
+      <div class="task-title">
+        <h3 *ngIf="task.project">{{task.project.toUpperCase()}}&nbsp;|&nbsp;</h3>
+        <h3>{{task.name}}</h3>
+      </div>
+      <input type="text" name="infos" class="task-in task-infos-in" [(ngModel)]="task.infos" />
       <p>Created: {{task.timestamp.dateDisplay}} {{task.timestamp.timeDisplay}}</p>
     </div>
     <div class="task-section task-deadline">
       <label for="">Deadline</label>
-      <input type="text" class="task-in task-deadline-in" [value]="durationInput">
+      <input type="text" class="task-in task-deadline-in" [value]="deadlineInput">
     </div>
     <div class="task-section task-duration">
       <label for="">Duration</label>

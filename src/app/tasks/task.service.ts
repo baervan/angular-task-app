@@ -8,40 +8,6 @@ export class TaskService {
   private tasks: Task[] = []
   private id: number = 0
 
-  //example starting tasks
-  private exampleTask1: Task = {
-    id: 1,
-    project: "Gado",
-    name: "Gado",
-    timestamp: "today",
-    priority: 1,
-    times : {
-      start: "today",
-      end: "today"
-    },
-    completed: false,
-    active: true
-  }
-
-  private exampleTask2: Task = {
-    id: 2,
-    project: "Terra",
-    name: "Forming",
-    timestamp: "today",
-    priority: 2,
-    times : {
-      start: "today",
-      end: "today"
-    },
-    completed: true,
-    active: true
-  }
-
-  private savedTasks: Task[] = [
-    this.exampleTask1,
-    this.exampleTask2
-  ]
-
   constructor(private timeService: TimeService) {}
 
   sendTasks() {
@@ -74,6 +40,7 @@ export class TaskService {
     newTask = {
       id: this.addTaskId(),
       name: params.name,
+      project: params.project,
       timestamp: this.timeService.getTimestamp(),
       urgent: params.urgent,
       times: {
@@ -93,4 +60,40 @@ export class TaskService {
     this.id++
     return this.id
   }
+
+  //example starting tasks
+  private exampleTask1: Task = {
+    id: 1,
+    project: "Gado",
+    name: "Gado",
+    infos: "very nice",
+    timestamp: "today",
+    priority: 1,
+    times : {
+      start: "today",
+      end: "today"
+    },
+    completed: false,
+    active: true
+  }
+
+  private exampleTask2: Task = {
+    id: 2,
+    project: "Terra",
+    name: "Forming",
+    infos: "very hard",
+    timestamp: "today",
+    priority: 2,
+    times : {
+      start: "today",
+      end: "today"
+    },
+    completed: true,
+    active: true
+  }
+
+  private savedTasks: Task[] = [
+    this.exampleTask1,
+    this.exampleTask2
+  ]
 }
