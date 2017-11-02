@@ -1,30 +1,12 @@
-header {
-    background: #43a8e2;
-    clear: both;
-    width: 100%;
-    text-align: right;
-}
-
-header div {
-    width: 10em;
-    text-align: center;
-    display: inline-block;
-    padding: .8em 0;
-    margin: 0 2em 0 0;
-}
-
-header div h2,
-header div i {
-    padding: .1em 0;
-    margin: 0;
-}
-
-header div.header-logo {
-  color: #FFF;
+#wrapper {
+  background: #8BB1BA;
+  font-family: Helvetica, Arial, sans-serif;
+  width: 60%;
+  margin: 0 auto;
 }
 
 sidebar {
-    background: #91c5e2;
+    background: #80A4AD;
     float: left;
     transition: all 300ms ease-in-out;
     -webkit-transition: all 200ms ease-out;
@@ -32,13 +14,9 @@ sidebar {
     height: 100%;
 }
 
-sidebar.sidebar-extend {
-    /*width: 12em;*/
-}
-
 main {
     float: left;
-    padding: 1em 1em 0 1em;
+    padding: 2em 2em 2em 3em;
     box-sizing: border-box;
 }
 
@@ -52,7 +30,7 @@ footer {
 /* GRID experiment */
 #wrapper {
   display: grid;
-  grid-template-columns: 4em auto;
+  grid-template-columns: 6em auto;
   transition: all 300ms ease-in-out;
 }
 

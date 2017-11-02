@@ -1,12 +1,12 @@
 div.task {
   padding: 1em;
-  background: #f5f5f5;
+  background: #80A4AD;
   overflow: hidden;
   width: 100%;
   box-sizing: border-box;
   margin: 0 0 1em 0;
   display: grid;
-  grid-template-columns: 20em 12em 12em auto 6em 6em 6em;
+  grid-template-columns: 6em auto auto 6em;
 
   user-select: none;
   -webkit-user-select: none;  /* Chrome all / Safari all */
@@ -15,11 +15,11 @@ div.task {
 }
 
 div.task-urgent {
-  background: #fff1f1;
+  background: #DDC045;
 }
 
 div.task-completed {
-  background: #FFF;
+  background: #BBB;
 }
 
 div.task:hover {
@@ -41,7 +41,6 @@ div.task-section:first-child {
 
 div.task-btn {
   text-align: center;
-  line-height: 8em;
 }
 
 div.task-infos-in {
@@ -54,7 +53,7 @@ div button {
   border-radius: 3px;
   background: #43a8e2;
   color: #FFF;
-  padding: 1em;
+  padding: .5em;
 }
 
 div.task-deleted-btn button {

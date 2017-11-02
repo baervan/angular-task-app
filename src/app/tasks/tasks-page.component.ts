@@ -5,7 +5,7 @@ import { TimeService } from '../time/time.service'
 
 @Component({
   templateUrl: 'app/tasks/tasks-page.component.html',
-  styleUrls: []
+  styleUrls: ['app/tasks/tasks-page.component.css']
 })
 export class TaskPageComponent implements OnInit {
   private tasks: Task[] = []

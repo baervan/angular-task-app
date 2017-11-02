@@ -1,6 +1,18 @@
 <create-task></create-task>
 
-<h2>Tasks</h2>
+<h2>today</h2>
 <div *ngFor="let task of tasks">
     <task [task]="task" *ngIf="task.active"></task>
 </div>
+
+<h2>tomorrow</h2>
+<div>
+  tomorrow tasks
+</div>
+
+<h2>later</h2>
+<div>
+  later tasks
+</div>
+
+<br><br>

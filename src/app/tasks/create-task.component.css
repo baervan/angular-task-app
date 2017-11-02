@@ -1,10 +1,17 @@
 input {
-  height: 3em;
-  width: 40%;
-  border: 1px solid #CCC;
+  height: 2.5em;
+  width: 60%;
+  border: none;
   margin: 0;
   box-sizing: border-box;
   padding: 0 0 0 1em;
+  font-size: 1em;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+input::placeholder {
+  color: #DDD;
 }
 
 button {

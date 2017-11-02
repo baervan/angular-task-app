@@ -11,7 +11,7 @@ ul li div {
 }
 
 ul li:first-child {
-  margin: 0 0 2em 0;
+  margin: 2em 0 2em 0;
 }
 
 ul li div:hover {
@@ -32,8 +32,4 @@ div.side-link {
 div.side-link-long {
     padding: 1em 0 1em 1em;
     text-align: left;
-}
-
-i.rotated {
-  transform: rotate(90deg);
 }
