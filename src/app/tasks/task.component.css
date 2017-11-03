@@ -7,67 +7,53 @@ div.task {
   margin: 0 0 1em 0;
   display: grid;
   grid-template-columns: 6em auto auto 6em;
-
   user-select: none;
-  -webkit-user-select: none;  /* Chrome all / Safari all */
-  -moz-user-select: none;     /* Firefox all */
-  -ms-user-select: none;      /* IE 10+ */
-}
-
-div.task-urgent {
-  background: #DDC045;
-}
-
-div.task-completed {
-  background: #BBB;
-}
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+  -moz-user-select: none;
+  /* Firefox all */
+  -ms-user-select: none;
+  /* IE 10+ */ }
 
 div.task:hover {
-  outline: 2px dashed #AFAFAF;
-}
+  outline: 2px dashed #AFAFAF; }
 
-h3 {
-  margin: 0.5em 0;
-  display: inline-block;
-}
+div.task-urgent {
+  background: #DDC045; }
 
-p {
-  margin: 0 0 0.5em 0;
-}
+div.task-completed {
+  background: #BBB; }
 
 div.task-section:first-child {
-  grid-column: 1/2;
-}
+  grid-column: 1/2; }
 
 div.task-btn {
-  text-align: center;
-}
+  text-align: center; }
 
 div.task-infos-in {
   clear: both;
-  display: block;
-}
+  display: block; }
+
+div.task-deleted-btn button {
+  width: 4em; }
 
 div button {
   border: none;
   border-radius: 3px;
   background: #43a8e2;
   color: #FFF;
-  padding: .5em;
-}
-
-div.task-deleted-btn button {
-  width: 4em;
-}
-
-div button.urgent-btn-clicked {
-  background: #e06a6a;
-}
-
-div button.completed-btn-clicked {
-  background: #539865;
-}
+  padding: .5em; }
+  div button.urgent-btn-clicked {
+    background: #e06a6a; }
+  div button.completed-btn-clicked {
+    background: #539865; }
 
 div input.task-in {
-  border: none;
-}
+  border: none; }
+
+h3 {
+  margin: 0.5em 0;
+  display: inline-block; }
+
+p {
+  margin: 0 0 0.5em 0; }
