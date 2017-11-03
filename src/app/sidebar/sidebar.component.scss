@@ -1,0 +1,34 @@
+ul {
+    display: block;
+    color: #FFF;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2em 0;
+    li {
+        a {
+            color: #FFF;
+            text-decoration: none;
+        }
+        div {
+            transition: all 200ms ease-in-out;
+        }
+        div:hover {
+            background: #FFF;
+            color: #8E96B8;
+        }
+    }
+    li:first-child {
+        margin: 2em 0 2em 0;
+    }
+}
+
+div {
+    &.side-link {
+        text-align: center;
+        padding: 1em 0;
+    }
+    &.side-link-long {
+        padding: 1em 0 1em 1em;
+        text-align: left;
+    }
+}

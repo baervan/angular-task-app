@@ -1,0 +1,65 @@
+#wrapper {
+  background: #8BB1BA;
+  font-family: Helvetica, Arial, sans-serif;
+  width: 60%;
+  margin: 0 auto;
+}
+
+sidebar {
+    background: #80A4AD;
+    float: left;
+    transition: all 300ms ease-in-out;
+    -webkit-transition: all 200ms ease-out;
+    /*width: 4em;*/
+    height: 100%;
+}
+
+main {
+    float: left;
+    padding: 2em 2em 2em 3em;
+    box-sizing: border-box;
+}
+
+footer {
+    width: 100%;
+    clear: both;
+    background: #4D4D4D;
+    padding: 4em 0;
+}
+
+/* GRID experiment */
+#wrapper {
+  display: grid;
+  grid-template-columns: 6em auto;
+  transition: all 300ms ease-in-out;
+}
+
+#wrapper.sidebar-extend {
+  grid-template-columns: 12em auto;
+  grid-template-rows: auto;
+}
+
+#wrapper.modal-on {
+  opacity: 0.4;
+}
+
+header {
+  grid-column: 1/3;
+}
+
+sidebar {
+  grid-column: 1/2;
+}
+
+main {
+  grid-column: 2/3;
+}
+
+footer {
+  grid-column: 1/3;
+}
+
+modal {
+  width: 100%;
+  height: 100%;
+}
