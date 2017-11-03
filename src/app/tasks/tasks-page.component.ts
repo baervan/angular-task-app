@@ -9,11 +9,21 @@ import { TimeService } from '../time/time.service'
 })
 export class TaskPageComponent implements OnInit {
   private tasks: Task[] = []
+  private dateToday: any
+  private dateTomorrow: any
 
   constructor(private taskService: TaskService, private timeService: TimeService) {}
 
   ngOnInit() {
     //initialize saved tasks
     this.tasks = this.taskService.loadTasks()
+
+    //timestamp
+    this.dateToday = this.timeService.getTimestamp()
+
+    //date tomorrow
+    this.dateTomorrow = this.dateToday
+    this.dateTomorrow.date.setDate( this.dateToday.day + 1 )
+    console.log( this.dateToday.date )
   }
 }

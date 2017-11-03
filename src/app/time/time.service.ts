@@ -18,6 +18,10 @@ export class TimeService {
     return elapsed
   }
 
+  addDays(timeObject: Time, n: number) {
+    return timeObject
+  }
+
 }
 
 class Time {

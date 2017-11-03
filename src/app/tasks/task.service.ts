@@ -44,8 +44,10 @@ export class TaskService {
       timestamp: this.timeService.getTimestamp(),
       urgent: params.urgent,
       times: {
-        start: this.timeService.getTimestamp().dateDisplay,
-        end: ""
+        start: "",
+        end: "",
+        startDisplay: this.timeService.getTimestamp().dateDisplay,
+        endDisplay: this.timeService.getTimestamp().dateDisplay
       },
       completed: false,
       active: true
@@ -71,7 +73,7 @@ export class TaskService {
     priority: 1,
     times : {
       start: "today",
-      end: "today"
+      end: "04/11/2017"
     },
     completed: false,
     active: true
@@ -86,7 +88,7 @@ export class TaskService {
     priority: 2,
     times : {
       start: "today",
-      end: "today"
+      end: "05/11/2017"
     },
     completed: true,
     active: true

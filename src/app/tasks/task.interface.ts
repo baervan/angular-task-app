@@ -7,8 +7,10 @@ export class Task {
   priority?: number
   urgent?: boolean
   times?: {
-    start: string
-    end: string
+    start: any
+    end: any
+    startDisplay?: string
+    endDisplay?: string
   }
   completed: boolean
   active?: boolean
