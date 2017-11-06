@@ -2,43 +2,66 @@ import { Injectable } from '@angular/core'
 
 @Injectable()
 export class InputStringService {
+  private patterns: any = {
+    dot: /\./i,
+    name: /\.?([a-z0-9\s]*)\\?/i,
+    urgent: /(!)/i,
+    prop: /\\([u]*)$/i,
+    description: /\@([a-z0-9\s]*)/i,
+    deadline: /\\([0-9]{1,2}:[0-9]{1,2})$/i,
+    duration: /\\([0-9\.]*)$/i,
+    project: /^[a-z0-9\s]*\./i
+  }
+
+//  private properties: any = {
+//    dot: { pattern: /\./ig, type: '', empty: '' },
+//    name: { pattern:  /\.?([a-z0-9\s]*)\\*/ig, type: '', empty: ''},
+//    urgent: { pattern: /(!)/ig, type: '', empty: '' },
+//    prop: { pattern: /\\([u]*)$/ig, type: '', empty: '' },
+//    description: { pattern: /\@([a-z0-9\s]*)/ig, type: '', empty: '' },
+//    deadline: { pattern: /\\([0-9]{1,2}:[0-9]{1,2})$/ig, type: '', empty: '' },
+//    duration: { pattern: /\\([0-9\.]*)$/ig, type: '', empty: '' },
+//    project: { pattern: /^[a-z0-9\s]*\./ig, type: '', empty: '' }
+//  }
 
   //parses string with special markers
   parse(str: string) {
-    const dotPattern = /\./ig,
-      namePattern = /\.?([a-z0-9\s]*)\\*/ig,
-      urgentPattern = /(!)/ig,
-      propPattern = /\\([u]*)$/ig,
-      descriptionPattern = /\@([a-z0-9\s]*)/ig,
-      deadlinePattern = /\\([0-9]{1,2}:[0-9]{1,2})$/ig,
-      durationPattern = /\\([0-9\.]*)$/ig,
-      projectPattern = /^[a-z0-9\s]*\./ig
+    let	pat = this.patterns,
+      parsed = {},
+      name, props, project, description, deadline, duration, urgent = null
 
-    let	name,
-      props,
-      project,
-      description,
-      deadline,
-      duration,
-      urgent
-
-    //test for dot presence
-    if ( dotPattern.test(str) ) {
-      project = projectPattern.exec(str)
+    //dot pattern - project
+    if ( pat.dot.test(str) ) {
+      project = pat.project.exec(str)
       project = project[0].slice(0, project[0].length - 1)
 
-      str = str.substr( str.search(dotPattern) + 1 )
+      str = str.substr( str.search(pat.dot) + 1 )
     }
 
-    name = namePattern.exec(str);
+    /* Maybe implement?
+    for( let propName in this.properties ) {
+      let prop = this.properties[propName]
+      let result = prop.pattern.exec(str)
+
+      if( result !== null ) {
+        result = result[0]
+      } else result = prop.empty
+
+      parsed = Object.assign(parsed, result)
+      console.log(parsed)
+    }*/
+
+    //other patterns
+    name = pat.name.exec(str);
     name = name[1].charAt(0).toUpperCase() + name[1].slice(1)
-    description = descriptionPattern.exec(str)
-    deadline = deadlinePattern.exec(str)
-    duration = durationPattern.exec(str)
+    description = pat.description.exec(str)
+    deadline = pat.deadline.exec(str)
+    duration = pat.duration.exec(str)
 
-    urgent = urgentPattern.exec(str)
-    props = propPattern.exec(str)
+    urgent = pat.urgent.exec(str)
+    props = pat.prop.exec(str)
 
+    //apply changes
     if(description !== null) {
       description = description[0]
     } else description = "-- --"

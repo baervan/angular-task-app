@@ -1,17 +1,16 @@
+import { Time } from '../time/time.service'
+
 export class Task {
+  constructor() {}
+
   id: number
   project?: string
   name: string
   infos?: string
-  timestamp?: {}
+  timestamp?: Time
+  end?: Time
   priority?: number
   urgent?: boolean
-  times?: {
-    start: any
-    end: any
-    startDisplay?: string
-    endDisplay?: string
-  }
   completed: boolean
   active?: boolean
 }

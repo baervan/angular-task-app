@@ -15,7 +15,7 @@
           <button (click)="urgentButtonClick()" [class.urgent-btn-clicked]="task.urgent" [disabled]="task.completed">
             <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
           </button>
-          <input type="text" class="task-in task-deadline-in" [value]="deadlineInput">
+          <input type="text" class="task-in task-deadline-in" [(ngModel)]="deadlineInput" (keyup)="onDeadlineChange($event)">
         </div>
         <div class="task-action task-priority">
           <button (click)="urgentButtonClick()" [class.urgent-btn-clicked]="task.urgent" [disabled]="task.completed">

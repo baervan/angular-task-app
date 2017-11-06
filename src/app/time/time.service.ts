@@ -2,10 +2,9 @@ import { Injectable } from '@angular/core'
 
 @Injectable()
 export class TimeService {
-  startupTimeStamp: Time
 
-  startTimer() {
-    this.startupTimeStamp = this.getTimestamp()
+  getTime(date: Date) {
+    return new Time( date )
   }
 
   getTimestamp() {
@@ -13,19 +12,32 @@ export class TimeService {
   }
 
   getElapsedTime(start: Time, end: Time) {
-    let elapsed = end.date.valueOf() - start.date.valueOf()
+  }
 
-    return elapsed
+  compareDates(first: Time, second: Time) {
+    if ( first.dateDisplay === second.dateDisplay ) return 0
+    if (
+      first.year > second.year ||
+      ( first.year === second.year && first.month > second.month ) ||
+      ( first.year === second.year && first.month === second.month && first.day > second.day )
+     ) return 1
+    else return -1
   }
 
   addDays(timeObject: Time, n: number) {
-    return timeObject
-  }
+    let newTimeObject = this.getTime( new Date( timeObject.array ) )
+    let newdate = newTimeObject.date
 
+    newdate.setDate( newdate.getDate() + n )
+    newTimeObject.update(newdate)
+
+    return newTimeObject
+  }
 }
 
-class Time {
+export class Time {
   date: Date
+  array: any
   dateArray: any
   timeArray: any
   unix: number
@@ -35,14 +47,19 @@ class Time {
   month: number
   year: number
 
-  constructor(date: Date) {
-    this.date = date
-    this.unix = +date
-    this.day = date.getDate()
-    this.month = date.getMonth() + 1
-    this.year = date.getFullYear()
+  constructor( date: Date ) {
+    this.update(date)
+  }
+
+  public update( newdate: Date ) {
+    this.date = newdate
+    this.unix = +newdate
+    this.day = newdate.getDate()
+    this.month = newdate.getMonth() + 1
+    this.year = newdate.getFullYear()
+    this.array = [ this.year, this.month, this.day ]
     this.dateArray = [ this.day, this.month, this.year ].map(this.checkTime)
-    this.timeArray = [ date.getHours(), date.getMinutes(), date.getSeconds() ].map(this.checkTime)
+    this.timeArray = [ newdate.getHours(), newdate.getMinutes(), newdate.getSeconds() ].map(this.checkTime)
     this.dateDisplay = this.dateArray.join("/")
     this.timeDisplay = this.timeArray.join(":")
   }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { Task } from './task.interface'
 import { TaskService } from './task.service'
-import { TimeService } from '../time/time.service'
+import { TimeService, Time } from '../time/time.service'
 
 @Component({
   templateUrl: 'app/tasks/tasks-page.component.html',
@@ -20,10 +20,17 @@ export class TaskPageComponent implements OnInit {
 
     //timestamp
     this.dateToday = this.timeService.getTimestamp()
+  }
 
-    //date tomorrow
-    this.dateTomorrow = this.dateToday
-    this.dateTomorrow.date.setDate( this.dateToday.day + 1 )
-    console.log( this.dateToday.date )
+  isTodayOrLess( deadline: Time, today: Time ) {
+    return this.timeService.compareDates(deadline, today) <= 0
+  }
+
+  isTomorrow( deadline: Time, today: Time ) {
+    return this.timeService.compareDates(deadline, this.timeService.addDays(today, 1)) === 0
+  }
+
+  isLater( deadline: Time, today: Time ) {
+    return this.timeService.compareDates(deadline, this.timeService.addDays(today, 1)) === 1
   }
 }

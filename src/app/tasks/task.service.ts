@@ -7,6 +7,7 @@ export class TaskService {
 
   private tasks: Task[] = []
   private id: number = 0
+  private savedTasks: Task[] = []
 
   constructor(private timeService: TimeService) {}
 
@@ -16,6 +17,7 @@ export class TaskService {
 
   loadTasks() {
     //simulate here connection to db
+    this.savedTasks = this.exampleTasks()
 
     //if there are saved tasks
     if (this.savedTasks.length) {
@@ -36,19 +38,15 @@ export class TaskService {
 
   createNewTask(params: any) {
     let newTask = new Task
+    let time = this.timeService.getTimestamp()
 
     newTask = {
       id: this.addTaskId(),
       name: params.name,
       project: params.project,
-      timestamp: this.timeService.getTimestamp(),
+      timestamp: time,
+      end: time,
       urgent: params.urgent,
-      times: {
-        start: "",
-        end: "",
-        startDisplay: this.timeService.getTimestamp().dateDisplay,
-        endDisplay: this.timeService.getTimestamp().dateDisplay
-      },
       completed: false,
       active: true
     }
@@ -63,39 +61,39 @@ export class TaskService {
     return this.id
   }
 
-  //example starting tasks
-  private exampleTask1: Task = {
-    id: 1,
-    project: "Gado",
-    name: "Gado",
-    infos: "very nice",
-    timestamp: "today",
-    priority: 1,
-    times : {
-      start: "today",
-      end: "04/11/2017"
-    },
-    completed: false,
-    active: true
+  //creates example starting tasks
+  exampleTasks() {
+    let taskTomorrow = this.timeService.getTimestamp()
+    taskTomorrow = this.timeService.addDays( taskTomorrow, 1)
+
+    let exampleTask1: Task = {
+      id: 1,
+      project: "Gado",
+      name: "Gado",
+      infos: "very nice",
+      timestamp: taskTomorrow,
+      end: taskTomorrow,
+      priority: 1,
+      completed: false,
+      active: true
+    }
+
+    let taskLater = this.timeService.getTimestamp()
+    taskLater = this.timeService.addDays( taskLater, 2)
+
+    let exampleTask2: Task = {
+      id: 2,
+      project: "Terra",
+      name: "Forming",
+      infos: "very hard",
+      timestamp: taskLater,
+      end: taskLater,
+      priority: 2,
+      completed: true,
+      active: true
+    }
+
+    return [exampleTask1, exampleTask2]
   }
 
-  private exampleTask2: Task = {
-    id: 2,
-    project: "Terra",
-    name: "Forming",
-    infos: "very hard",
-    timestamp: "today",
-    priority: 2,
-    times : {
-      start: "today",
-      end: "05/11/2017"
-    },
-    completed: true,
-    active: true
-  }
-
-  private savedTasks: Task[] = [
-    this.exampleTask1,
-    this.exampleTask2
-  ]
 }

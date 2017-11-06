@@ -17,7 +17,6 @@ Special characters
 
 #### prio I:
 - Fix checkbox
-- Implement task distribution along the 3 containers
 - Implement task filtering by deadline and prio
 - Implement folding info panel for tasks
 - Implement on hold status

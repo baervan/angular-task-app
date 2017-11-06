@@ -2,17 +2,17 @@
 
 <h2>today</h2>
 <div *ngFor="let task of tasks">
-    <task [task]="task" *ngIf="task.active && task.times.end === dateToday.dateDisplay"></task>
+    <task [task]="task" *ngIf="task.active && isTodayOrLess(task.end, dateToday)"></task>
 </div>
 
 <h2>tomorrow</h2>
 <div *ngFor="let task of tasks">
-    <task [task]="task" *ngIf="task.active && task.times.end === dateTomorrow.dateDisplay"></task>
+    <task [task]="task" *ngIf="task.active && isTomorrow(task.end, dateToday)"></task>
 </div>
 
 <h2>later</h2>
 <div *ngFor="let task of tasks">
-    <task [task]="task" *ngIf="task.active && task.times.end > dateTomorrow.dateDisplay"></task>
+    <task [task]="task" *ngIf="task.active && isLater(task.end, dateToday)"></task>
 </div>
 
 <br><br>
