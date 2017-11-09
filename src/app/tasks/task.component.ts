@@ -13,6 +13,7 @@ export class TaskComponent {
   @Input() task: Task
   private deadlineInput: string = "11/11/1111 00:00"
   private durationInput: string = "00:00"
+  private btnSlide: boolean = false
 
   constructor(private modal: ModalService, private timeService: TimeService) {}
 
@@ -29,17 +30,20 @@ export class TaskComponent {
   }
 
   deleteButtonClick() {
-    //modal call
+    this.btnSlide = !this.btnSlide
+
+    /*
     this.modal.render({
       type: 'yes-no',
       content: `
       Are you sure you want to delete
       ${this.task.name}?
       `
-    })
+    })*/
+  }
 
-    let modalResponse = new Observable()
-    //this.task.active = !this.task.active
+  deleteButtonConfirm(resp: boolean) {
+    this.btnSlide = !this.btnSlide
   }
 
   onDeadlineChange(e: any) {

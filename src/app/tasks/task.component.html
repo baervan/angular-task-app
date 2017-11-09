@@ -1,42 +1,50 @@
 <div [class.task-urgent]="task.urgent" [class.task-completed]="task.completed" class="task" draggable="true">
     <div class="task-section task-btn task-completed-btn">
-      <button (click)="completedButtonClick()" [class.completed-btn-clicked]="task.completed">
+        <button (click)="completedButtonClick()" [class.completed-btn-clicked]="task.completed">
         <i class="fa fa-check-square-o fa-2x" aria-hidden="true"></i>
       </button>
     </div>
     <div class="task-section task-main">
-      <div class="task-title">
-        <h3 *ngIf="task.project">{{task.project.toUpperCase()}}&nbsp;|&nbsp;</h3>
-        <h3>{{task.name}}</h3>
-      </div>
+        <div class="task-title">
+            <h3 *ngIf="task.project">{{task.project.toUpperCase()}}&nbsp;|&nbsp;</h3>
+            <h3>{{task.name}}</h3>
+        </div>
     </div>
     <div class="task-section task-actions">
         <div class="task-action task-priority">
-          <button (click)="urgentButtonClick()" [class.urgent-btn-clicked]="task.urgent" [disabled]="task.completed">
+            <button (click)="urgentButtonClick()" [class.urgent-btn-clicked]="task.urgent" [disabled]="task.completed">
             <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
           </button>
-          <input type="text" class="task-in task-deadline-in" [(ngModel)]="deadlineInput" (keyup)="onDeadlineChange($event)">
+            <input type="text" class="task-in task-deadline-in" [(ngModel)]="deadlineInput" (keyup)="onDeadlineChange($event)">
         </div>
         <div class="task-action task-priority">
-          <button (click)="urgentButtonClick()" [class.urgent-btn-clicked]="task.urgent" [disabled]="task.completed">
+            <button (click)="urgentButtonClick()" [class.urgent-btn-clicked]="task.urgent" [disabled]="task.completed">
             <i class="fa fa-info-circle" aria-hidden="true"></i>
           </button>
-          <input type="text" name="infos" class="task-in task-infos-in" [(ngModel)]="task.infos" />
-          <!--<input type="text" class="task-in task-deadline-in" [value]="deadlineInput">-->
+            <input type="text" name="infos" class="task-in task-infos-in" [(ngModel)]="task.infos" />
+            <!--<input type="text" class="task-in task-deadline-in" [value]="deadlineInput">-->
         </div>
     </div>
     <div class="task-section task-btn task-deleted-btn">
-      <button (click)="deleteButtonClick()">
-        <i class="fa fa-trash fa-2x" aria-hidden="true"></i>
-      </button>
+        <div class="btn-delete-wrap" [class.btn-delete-inv]="btnSlide">
+            <button class="btn-delete-main" (click)="deleteButtonClick()">
+                <i class="fa fa-trash fa-2x" aria-hidden="true"></i>
+            </button>
+            <button class="btn-delete-yes" (click)="deleteButtonConfirm(true)">
+                Yes
+            </button>
+            <button class="btn-delete-no" (click)="deleteButtonConfirm(false)">
+                No
+            </button>
+        </div>
     </div>
 </div>
 <div class="task-details" style="display: none;">
     <p>Created: {{task.timestamp.dateDisplay}} {{task.timestamp.timeDisplay}}</p>
     <div class="task-duration">
-      <label for="">Duration</label>
-      <input type="text" class="task-in task-duration-in" [(ngModel)]="durationInput">
-      <button>
+        <label for="">Duration</label>
+        <input type="text" class="task-in task-duration-in" [(ngModel)]="durationInput">
+        <button>
         <i class="fa fa-play" aria-hidden="true"></i>
       </button>
     </div>

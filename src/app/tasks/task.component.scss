@@ -36,8 +36,29 @@ div {
         display: block;
     }
     &.task-deleted-btn {
+        width: 4em;
+        height: 3em;
+        overflow: hidden;
         button {
-            width: 4em;
+            height: 3em;
+            padding: 0;
+            display: inline-block;
+        }
+        .btn-delete-wrap {
+            width: 8em;
+            height: 3em;
+            transition: all 200ms ease-in-out;
+            margin: 0;
+            .btn-delete-main {
+                width: 4em;
+            }
+            .btn-delete-yes,
+            .btn-delete-no {
+                width: 2em;
+            }
+        }
+        .btn-delete-inv {
+            margin-left: -4em;
         }
     }
     button {
