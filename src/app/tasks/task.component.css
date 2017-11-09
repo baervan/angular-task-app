@@ -44,10 +44,12 @@ div.task-deleted-btn {
     border: none;
     display: block;
     float: left; }
+  div.task-deleted-btn button:active {
+    background: red; }
   div.task-deleted-btn .btn-delete-wrap {
     width: 96px;
     height: 3em;
-    transition: all 200ms ease-in-out;
+    transition: all 100ms ease-in-out;
     margin: 0; }
     div.task-deleted-btn .btn-delete-wrap .btn-delete-main {
       width: 48px; }

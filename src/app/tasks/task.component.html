@@ -1,7 +1,8 @@
 <div [class.task-urgent]="task.urgent" [class.task-completed]="task.completed" class="task" draggable="true">
     <div class="task-section task-btn task-completed-btn">
-        <button (click)="completedButtonClick()" [class.completed-btn-clicked]="task.completed">
-        <i class="fa fa-check-square-o fa-2x" aria-hidden="true"></i>
+        <button (click)="completedButtonClick()" class="btn-completed" [class.completed-btn-clicked]="task.completed">
+          <i class="fa fa-circle fa-2x" aria-hidden="true" *ngIf="!task.completed"></i>
+          <i class="fa fa-check-circle fa-2x" aria-hidden="true" *ngIf="task.completed"></i>
       </button>
     </div>
     <div class="task-section task-main">
@@ -31,10 +32,10 @@
                 <i class="fa fa-trash fa-2x" aria-hidden="true"></i>
             </button>
             <button class="btn-delete-yes" (click)="deleteButtonConfirm(true)">
-                Yes
+                <i class="fa fa-check" aria-hidden="true"></i>
             </button>
             <button class="btn-delete-no" (click)="deleteButtonConfirm(false)">
-                No
+                <i class="fa fa-times" aria-hidden="true"></i>
             </button>
         </div>
     </div>

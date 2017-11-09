@@ -46,10 +46,13 @@ div {
             display: block;
             float: left;
         }
+        button:active {
+          background: red;
+        }
         .btn-delete-wrap {
             width: 96px;
             height: 3em;
-            transition: all 200ms ease-in-out;
+            transition: all 100ms ease-in-out;
             margin: 0;
             .btn-delete-main {
                 width: 48px;
@@ -69,6 +72,10 @@ div {
         background: #43a8e2;
         color: #FFF;
         padding: .5em;
+        &.btn-completed {
+          background: none;
+          color: #FFF;
+        }
         &.urgent-btn-clicked {
             background: #e06a6a;
         }

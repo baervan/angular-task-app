@@ -31,14 +31,14 @@ export class TaskComponent {
   }
 
   deleteButtonClick() {
-    if (this.bounceTimer) {
-      clearTimeout(this.bounceTimer)
-    }
+    let tempSlide = this.btnSlide
 
-    this.bounceTimer = setTimeout( () => {
-      this.btnSlide = !this.btnSlide
-    }, 200)
-
+    //key press delay
+    setTimeout( () => {
+      if( tempSlide === this.btnSlide ) {
+        this.btnSlide = !this.btnSlide
+      }
+    }, 50)
     /*
     this.modal.render({
       type: 'yes-no',
@@ -50,6 +50,7 @@ export class TaskComponent {
   }
 
   deleteButtonConfirm(resp: boolean) {
+    console.log(resp)
     this.deleteButtonClick()
   }
 
