@@ -35,25 +35,27 @@ div.task-infos-in {
   display: block; }
 
 div.task-deleted-btn {
-  width: 4em;
+  width: 48px;
   height: 3em;
   overflow: hidden; }
   div.task-deleted-btn button {
     height: 3em;
     padding: 0;
-    display: inline-block; }
+    border: none;
+    display: block;
+    float: left; }
   div.task-deleted-btn .btn-delete-wrap {
-    width: 8em;
+    width: 96px;
     height: 3em;
     transition: all 200ms ease-in-out;
     margin: 0; }
     div.task-deleted-btn .btn-delete-wrap .btn-delete-main {
-      width: 4em; }
+      width: 48px; }
     div.task-deleted-btn .btn-delete-wrap .btn-delete-yes,
     div.task-deleted-btn .btn-delete-wrap .btn-delete-no {
-      width: 2em; }
+      width: 24px; }
   div.task-deleted-btn .btn-delete-inv {
-    margin-left: -4em; }
+    margin-left: -48px; }
 
 div button {
   border: none;

@@ -14,6 +14,7 @@ export class TaskComponent {
   private deadlineInput: string = "11/11/1111 00:00"
   private durationInput: string = "00:00"
   private btnSlide: boolean = false
+  private bounceTimer: any
 
   constructor(private modal: ModalService, private timeService: TimeService) {}
 
@@ -30,7 +31,13 @@ export class TaskComponent {
   }
 
   deleteButtonClick() {
-    this.btnSlide = !this.btnSlide
+    if (this.bounceTimer) {
+      clearTimeout(this.bounceTimer)
+    }
+
+    this.bounceTimer = setTimeout( () => {
+      this.btnSlide = !this.btnSlide
+    }, 200)
 
     /*
     this.modal.render({
@@ -43,7 +50,7 @@ export class TaskComponent {
   }
 
   deleteButtonConfirm(resp: boolean) {
-    this.btnSlide = !this.btnSlide
+    this.deleteButtonClick()
   }
 
   onDeadlineChange(e: any) {
