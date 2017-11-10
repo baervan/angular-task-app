@@ -64,11 +64,16 @@ div button {
   border-radius: 3px;
   background: #43a8e2;
   color: #FFF;
-  padding: .5em; }
+  padding: .5em;
+  /*
+        &.completed-btn-clicked {
+            background: #539865;
+        }*/ }
+  div button.btn-completed {
+    background: none;
+    color: #FFF; }
   div button.urgent-btn-clicked {
     background: #e06a6a; }
-  div button.completed-btn-clicked {
-    background: #539865; }
 
 div input.task-in {
   border: none; }

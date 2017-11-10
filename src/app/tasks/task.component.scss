@@ -47,7 +47,7 @@ div {
             float: left;
         }
         button:active {
-          background: red;
+            background: red;
         }
         .btn-delete-wrap {
             width: 96px;
@@ -73,15 +73,16 @@ div {
         color: #FFF;
         padding: .5em;
         &.btn-completed {
-          background: none;
-          color: #FFF;
+            background: none;
+            color: #FFF;
         }
         &.urgent-btn-clicked {
             background: #e06a6a;
         }
+        /*
         &.completed-btn-clicked {
             background: #539865;
-        }
+        }*/
     }
     input {
         &.task-in {
